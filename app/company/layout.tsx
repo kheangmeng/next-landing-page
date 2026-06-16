@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from "next-themes";
 
@@ -17,8 +17,18 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   const { setTheme } = useTheme()
-  const [hash, setHash] = useState(window?.location?.hash || '#home');
-  const initTheme = localStorage.getItem('theme') || 'system'
+  const [hash, setHash] = useState('#home');
+  const [initTheme, setInitTheme] = useState('system');
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // Initialize from browser APIs only on client
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setHash(window?.location?.hash || '#home');
+    const theme = localStorage.getItem('theme') || 'system';
+    setInitTheme(theme);
+    setIsMounted(true);
+  }, []);
 
   const activeClass = (currHash: string) => {
     if (hash === currHash) {
