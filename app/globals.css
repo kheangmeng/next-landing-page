@@ -1,8 +1,70 @@
 @import "tailwindcss";
+@import "material-symbols";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f9ff;
+  --foreground: #0b1c30;
+  --surface: #f8f9ff;
+  --surface-dim: #cbdbf5;
+  --surface-bright: #f8f9ff;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eff4ff;
+  --surface-container: #e5eeff;
+  --surface-container-high: #dce9ff;
+  --surface-container-highest: #d3e4fe;
+  --on-surface: #0b1c30;
+  --on-surface-variant: #434656;
+  --inverse-surface: #213145;
+  --inverse-on-surface: #eaf1ff;
+  --outline: #737688;
+  --outline-variant: #c3c5d9;
+  --primary: #0041c8;
+  --on-primary: #ffffff;
+  --primary-container: #0055ff;
+  --on-primary-container: #e3e6ff;
+  --secondary: #515f78;
+  --on-secondary: #ffffff;
+  --secondary-container: #d2e0fe;
+  --on-secondary-container: #55637d;
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+  --surface-variant: #d3e4fe;
+}
+
+.dark {
+  --background: #0b1c30;
+  --foreground: #f8f9ff;
+  --surface: #111318;
+  --surface-dim: #111318;
+  --surface-bright: #37393e;
+  --surface-container-lowest: #0c0e13;
+  --surface-container-low: #191c20;
+  --surface-container: #1d2024;
+  --surface-container-high: #282a2f;
+  --surface-container-highest: #33353a;
+  --on-surface: #e2e2e6;
+  --on-surface-variant: #c3c5d9;
+  --inverse-surface: #e2e2e6;
+  --inverse-on-surface: #2f3033;
+  --outline: #8d9199;
+  --outline-variant: #434656;
+  --primary: #3d5cda;
+  --on-primary: #00297a;
+  --primary-container: #003eb3;
+  --on-primary-container: #dce1ff;
+  --secondary: #b9c7e4;
+  --on-secondary: #233148;
+  --secondary-container: #39475f;
+  --on-secondary-container: #d6e3ff;
+  --error: #ffb4ab;
+  --on-error: #690005;
+  --error-container: #93000a;
+  --on-error-container: #ffdad6;
+  --surface-variant: #434656;
 }
 
 @theme inline {
@@ -10,13 +72,166 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Material Colors linked to variables */
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+  --color-error-container: var(--error-container);
+  --color-on-error-container: var(--on-error-container);
+  --color-surface-variant: var(--surface-variant);
+
+  /* Border Radius */
+  --rounded: 0.25rem;
+  --rounded-lg: 0.5rem;
+  --rounded-xl: 0.75rem;
+  --rounded-full: 9999px;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-base: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 80px;
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1280px;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not(.light) {
+    --background: #0b1c30;
+    --foreground: #f8f9ff;
+    --surface: #111318;
+    --surface-dim: #111318;
+    --surface-bright: #37393e;
+    --surface-container-lowest: #0c0e13;
+    --surface-container-low: #191c20;
+    --surface-container: #1d2024;
+    --surface-container-high: #282a2f;
+    --surface-container-highest: #33353a;
+    --on-surface: #e2e2e6;
+    --on-surface-variant: #c3c5d9;
+    --inverse-surface: #e2e2e6;
+    --inverse-on-surface: #2f3033;
+    --outline: #8d9199;
+    --outline-variant: #434656;
+    --primary: #91a3eb;
+    --on-primary: #00297a;
+    --primary-container: #003eb3;
+    --on-primary-container: #dce1ff;
+    --secondary: #b9c7e4;
+    --on-secondary: #233148;
+    --secondary-container: #39475f;
+    --on-secondary-container: #d6e3ff;
+    --error: #ffb4ab;
+    --on-error: #690005;
+    --error-container: #93000a;
+    --on-error-container: #ffdad6;
+    --surface-variant: #434656;
   }
+}
+
+/* Typography Utility Classes */
+
+.text-display-lg {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.text-display-lg-mobile {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.text-headline-md {
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.text-headline-sm {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+.text-body-lg {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.text-body-md {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.text-label-md {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+
+.text-label-sm {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); }
+.logo-scroll-container { mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+.animate-scroll { animation: scroll 40s linear infinite; }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.pricing-card-shadow {
+    box-shadow: 0 4px 20px rgba(10, 25, 47, 0.04);
+}
+.pricing-card-shadow:hover {
+    box-shadow: 0 10px 30px rgba(10, 25, 47, 0.08);
+}
+.primary-gradient {
+    background: linear-gradient(135deg, #0041c8 0%, #00329b 100%);
 }
 
 body {
