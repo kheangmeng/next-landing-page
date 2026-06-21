@@ -40,6 +40,7 @@ export default function Layout({
 
   const handleSetTheme = (theme: string) => {
     setTheme(theme)
+    setInitTheme(theme);
     localStorage.setItem('theme', theme)
   }
 
