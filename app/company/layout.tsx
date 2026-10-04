@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
+import { ThemeToggle } from "./toggle-mode";
 
 const links = [
   { name: 'About', href: '#about' },
@@ -16,18 +17,18 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { setTheme } = useTheme()
   const [hash, setHash] = useState('#home');
-  const [initTheme, setInitTheme] = useState('system');
-  const [isMounted, setIsMounted] = useState(false);
+  // const { setTheme } = useTheme()
+  // const [initTheme, setInitTheme] = useState('system');
+  // const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     // Initialize from browser APIs only on client
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setHash(window?.location?.hash || '#home');
-    const theme = localStorage.getItem('theme') || 'system';
-    setInitTheme(theme);
-    setIsMounted(true);
+    // const theme = localStorage.getItem('theme') || 'system';
+    // setInitTheme(theme);
+    // setIsMounted(true);
   }, []);
 
   const activeClass = (currHash: string) => {
@@ -38,11 +39,11 @@ export default function Layout({
     return 'text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md'
   }
 
-  const handleSetTheme = (theme: string) => {
-    setTheme(theme)
-    setInitTheme(theme);
-    localStorage.setItem('theme', theme)
-  }
+  // const handleSetTheme = (theme: string) => {
+  //   setTheme(theme)
+  //   setInitTheme(theme);
+  //   localStorage.setItem('theme', theme)
+  // }
 
   return (
     <>
@@ -71,11 +72,12 @@ export default function Layout({
           )}
         </nav>
         <div className="flex items-center gap-md">
-          <select value={initTheme} onChange={(e) => handleSetTheme(e.target.value)}>
+          {/* <select value={initTheme} onChange={(e) => handleSetTheme(e.target.value)}>
             <option value="light">Light</option>
             <option value="dark">Dark</option>
             <option value="system">System</option>
-          </select>
+          </select> */}
+          <div><ThemeToggle /></div>
           <button className="bg-primary text-on-primary dark:text-white px-lg py-sm rounded-full text-label-md font-label-md hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-150">
             Get Started
           </button>
