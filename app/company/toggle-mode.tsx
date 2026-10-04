@@ -26,7 +26,7 @@ const MoonIcon = (
 //     setTheme(isDarkMode ? 'light' : 'dark');
 //   };
 export function ThemeToggle() {
-  const {setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -35,8 +35,12 @@ export function ThemeToggle() {
       setIsDarkMode(false);
     }
 
-      const temp = localStorage.getItem("theme") || "system"
-      setIsDarkMode(temp === 'dark');
+      const theme = localStorage.getItem("theme");
+      if(theme) {
+        setIsDarkMode(theme === 'dark');
+      } else {
+        setIsDarkMode(resolvedTheme === 'dark');
+      }
     }
     load();
   }, []);
