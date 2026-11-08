@@ -11,7 +11,7 @@ export default function Contact() {
           <h1 className="text-display-lg-mobile md:text-display-lg font-display-lg mb-md">
             Let’s Build the Future Together
           </h1>
-          <p className="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          <p className="text-body-lg text-on-surface-variant max-w-2xl mx-auto px-sm">
             Have a vision for a breakthrough engineering project? Our experts are ready to
             collaborate on your next technical challenge.
           </p>

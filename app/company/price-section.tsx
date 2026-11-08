@@ -226,7 +226,7 @@ export default function Price() {
           </h2>
         </ScrollReveal>
 
-        <div className="space-y-md">
+        <div className="space-y-md px-md">
           <details className="group bg-surface-container-low rounded-xl p-md border border-outline-variant cursor-pointer transition-all">
             <summary className="flex justify-between items-center list-none font-headline-sm text-body-lg text-on-surface">
               Can I switch plans later?

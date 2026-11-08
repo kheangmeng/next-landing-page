@@ -312,12 +312,12 @@ export default function Home() {
                 into the age of intelligence.
               </p>
               <div className="flex flex-col sm:flex-row gap-base justify-center pt-md">
-                <button className="px-xl py-md bg-white text-primary rounded-xl font-headline-sm text-headline-sm hover:bg-surface-container-lowest transition-colors">
+                <button className="px-sm md:px-xl py-md bg-white text-primary rounded-xl font-headline-sm text-xl font-bold md:text-2xl hover:bg-surface-container-lowest transition-colors">
                   Book a Strategy Call
                 </button>
                 <Link
                   href="#price"
-                  className="px-xl py-md border border-white/30 text-white rounded-xl font-headline-sm text-headline-sm hover:bg-white/10 transition-colors">
+                  className="px-sm md:px-xl py-md border border-white/30 text-white rounded-xl font-headline-sm text-xl font-bold md:text-2xl hover:bg-white/10 transition-colors">
                   Pricing Plans
                 </Link>
               </div>

@@ -29,13 +29,13 @@ export default function Career() {
             <ScrollReveal direction="right" distance={150}>
               <div className="flex gap-base">
                 <a
-                  className="bg-primary text-on-primary px-lg py-md rounded-xl text-label-md font-label-md shadow-lg hover:shadow-xl transition-all"
+                  className="bg-primary text-on-primary px-md md:px-lg py-sm md:py-md rounded-xl text-label-md font-label-md shadow-lg hover:shadow-xl transition-all"
                   href="#positions"
                 >
                   View Openings
                 </a>
                 <a
-                  className="border border-outline px-lg py-md rounded-xl text-label-md font-label-md text-on-surface hover:bg-surface-container transition-all"
+                  className="border border-outline px-md md:px-lg py-sm md:py-md rounded-xl text-label-md font-label-md text-on-surface hover:bg-surface-container transition-all"
                   href="#culture"
                 >
                   Our Culture
@@ -54,7 +54,7 @@ export default function Career() {
         </div>
       </section>
       {/* <!-- Our Values Grid --> */}
-      <section className="px-lg py-xl bg-surface">
+      <section className="px-md md:px-lg py-xl bg-surface">
         <div className="max-w-container-max mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
             <ScrollReveal direction="right" distance={80}>
@@ -116,7 +116,7 @@ export default function Career() {
         </div>
       </section>
       {/* <!-- Open Positions --> */}
-      <section className="px-lg py-xl" id="positions">
+      <section className="px-md md:px-lg py-xl" id="positions">
         <div className="max-w-container-max mx-auto">
           <ScrollReveal direction="right" distance={80}>
             <div className="mb-xl">
